@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Taipei");
 session_start();
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=web01";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=web11_lv1";
     protected $user="root";
     protected $pw='';
     protected $table;
@@ -87,7 +87,7 @@ class DB{
     public function save($array){
         if(isset($array['id'])){
             //update
-            foreach($array[0] as $key => $value){
+            foreach($array as $key => $value){
                 $tmp[]="`$key`='$value'";
             }
             $sql="UPDATE $this->table 
@@ -130,6 +130,31 @@ function to($url){
     header("location:".$url);
 }
 
+$Total=new DB('total');
+$Bottom=new DB('bottom');
+$Title=new DB('title');
+$Ad=new DB('ad');
+$Mvim=new DB('mvim');
+$Image=new DB('image');
+$News=new DB('news');
+$Admin=new DB('admin');
+$Menu=new DB('menu');
+
+// $total=$Total->find(1);
+
+// // echo $Total->find(1)['total'];
+// echo $total['total'];
+
+// print_r($Total->all());
+
+if(isset($_SESSION['total'])){
+    // 把total拿出來，資料庫改變，再存進去
+    $total=$Total->find(1);
+    $total['total']++;
+    $Total->save($total);
+    $_SESSION['total']=$total['total'];
+
+}
 
 
 ?>
