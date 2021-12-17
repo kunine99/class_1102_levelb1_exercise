@@ -19,9 +19,13 @@ function lo(x)
 }
 function op(x,y,url)
 {
+	// 上面這個東西先淡出  
 	$(x).fadeIn()
+	
 	if(y)
 	$(y).fadeIn()
+
+	// y  url都在的話去執行一段指令叫$(y).load(url)
 	if(y&&url)
 	$(y).load(url)
 }

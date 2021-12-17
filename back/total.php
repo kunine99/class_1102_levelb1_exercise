@@ -1,7 +1,7 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli">進佔總人數管理</p>
     <!-- 刪除target="back"  原本可能是跟iframe連接的-->
-    <form method="post"  action="?do=tii">
+    <form method="post"  action="../api/total.php">
         <table width="50%" style="margin:auto">
         <!--  width="50%" style="margin:auto" 有空再改 -->
             <tbody>
@@ -17,8 +17,6 @@
             <tbody>
                 <tr>
                     <td width="200px">
-                        
-
                     <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
                 </tr>
             </tbody>
