@@ -214,9 +214,9 @@ $Menu=new DB('menu');
 $tt=$_GET['do']??'';
 
 switch($tt){
-    case "title":
-        $DB=$Title;
-    break;
+    // case "title":
+    //     $DB=$Title;
+    // break;
     case "ad":
         $DB=$Ad;
     break;
