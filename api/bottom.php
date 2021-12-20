@@ -6,6 +6,6 @@
 // $total['total']=$views;
 // $Total->save($total);
 
-$Botttom->save(['id'=>1,'botttom'=>$_POST['botttom']]);
+$Bottom->save(['id'=>1,'bottom'=>$_POST['bottom']]);
 
-to("../back.php?dobotttoml");
+to("../back.php?do=bottom");

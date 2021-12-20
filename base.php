@@ -23,7 +23,7 @@ class DB{
     }
     
     // 設定文字
-    private function setStr($table){;
+    private function setStr($table){
         switch($table){
             case "title";
                 $this->title="網站標題管理";
@@ -253,7 +253,7 @@ switch($tt){
 
 // print_r($Total->all());
 
-if(isset($_SESSION['total'])){
+if(!isset($_SESSION['total'])){
     // 把total拿出來，資料庫改變，再存進去
     $total=$Total->find(1);
     $total['total']++;

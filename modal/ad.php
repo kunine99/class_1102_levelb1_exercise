@@ -1,6 +1,6 @@
 <h3>新增動態文字廣告</h3>
 <hr>
-<form action="" method="post" enctype="multipart/form-data">
+<form action="api/add.php?do=ad" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>動態文字廣告：</td>

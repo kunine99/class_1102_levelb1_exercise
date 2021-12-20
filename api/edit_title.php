@@ -3,7 +3,7 @@
 include_once "../base.php";
 
 foreach($_POST['id'] as $key => $id){
-    if(isset($_post['del']) && in_array($id,$_POST['del'])){
+    if(isset($_POST['del']) && in_array($id,$_POST['del'])){
         //刪除   檢查有沒有這個陣列存在，如果有大表要被刪除，如果沒有就表示沒有要被刪除
         $Title->del($id);
         
@@ -13,7 +13,7 @@ foreach($_POST['id'] as $key => $id){
 
     }else{
         //更新
-        $data['data']=$id;// Save陣列有個特色，沒有id就新增
+        $data['id']=$id;// Save陣列有個特色，沒有id就新增
         $data['text']=$_POST['text'][$key];
         $data['sh']=($_POST['sh']==$id)?1:0;
         $Title->save($data);
