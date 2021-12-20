@@ -4,51 +4,36 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="45%"><?=$DB->header;?></td>
-                    <td width="23%">替代文字</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
-                    <td width="30%"><?=$DB->header;?></td>
-                    <td width="30%"><?=$DB->append;?></td>
-                    <td width="10%">次選單數</td>
-                    <td width="10%">顯示</td>
+
+                    <td width="40%"><?=$DB->header;?></td>
+                    <td width="40%"><?=$DB->append;?></td>
                     <td width="10%">刪除</td>
-                    <td width="10%"></td>
 
                 </tr>
                 <?php
                 $rows=$DB->all();
                 foreach($rows as $row){
-                    $checked=($row['sh']==1)?'checked':'';
+                   
                 ?>
                 <tr>
 
                     <td>
-                        <input type="text" name="name[]" value="<?=$row['name'];?>">
+                        <input type="text" name="acc[]" value="<?=$row['acc'];?>">
                     </td>
                     <td>
-                        <input type="text" name="href[]" value="<?=$row['href'];?>">
+                        <input type="password" name="pw[]" value="<?=$row['pw'];?>">
                     </td>
-                    <td></td>
-                    <td>
-                        <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=$checked;?>>
-                    </td>
+
                     <td>
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
 
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
-                    </td>
-                    <td>
-                    <input type="button"
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/upload_<?=$DB->table;?>.php?id=<?=$row['id'];?>&#39;)" 
-                              value="編輯次選單">
                     </td>
 
                 </tr>
                 <?php
                 }
                 ?>
-
             </tbody>
         </table>
         <table style="margin-top:40px; width:70%;">
@@ -56,10 +41,12 @@
                 <tr>
                     <td width="200px">
                         <input type="button"
-                        onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
+                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;
+                            modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
                               value="<?=$DB->button;?>">
                     </td>
                     <td class="cent">
+                        
                         <input type="submit" value="修改確定">
                         <input type="reset" value="重置">
                     </td>

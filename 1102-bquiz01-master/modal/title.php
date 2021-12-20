@@ -1,6 +1,5 @@
 <h3>新增標題圖片</h3>
 <hr>
-<!-- multipart/form-data 一定要記得加 -->
 <form action="api/add.php?do=<?=$_GET['table'];?>" method="post" enctype="multipart/form-data">
     <table>
         <tr>
@@ -13,5 +12,4 @@
         </tr>
     </table>
     <div><input type="submit" value="新增"><input type="reset" value="重置"></div>
-    <!-- 按下新增厚資料會傳到api/title.php -->
 </form>

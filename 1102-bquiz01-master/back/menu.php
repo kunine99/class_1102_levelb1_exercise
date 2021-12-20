@@ -4,10 +4,7 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="45%"><?=$DB->header;?></td>
-                    <td width="23%">替代文字</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
+
                     <td width="30%"><?=$DB->header;?></td>
                     <td width="30%"><?=$DB->append;?></td>
                     <td width="10%">次選單數</td>
@@ -48,7 +45,6 @@
                 <?php
                 }
                 ?>
-
             </tbody>
         </table>
         <table style="margin-top:40px; width:70%;">
@@ -56,10 +52,11 @@
                 <tr>
                     <td width="200px">
                         <input type="button"
-                        onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
+                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
                               value="<?=$DB->button;?>">
                     </td>
                     <td class="cent">
+                        
                         <input type="submit" value="修改確定">
                         <input type="reset" value="重置">
                     </td>

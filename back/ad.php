@@ -38,9 +38,10 @@
             <tbody>
                 <tr>
                     <td width="200px">
-                        <input type="button" 
-                        onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/ad.php&#39;)" 
-                        value="<?=$DB->button;?>">
+                        <!-- <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/ad.php&#39;)" value="<?=$DB->button;?>"> -->
+                        <input type="button"
+                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
+                              value="<?=$DB->button;?>">
                     </td>
                     <td class="cent">
                         <input type="submit" value="修改確定">
