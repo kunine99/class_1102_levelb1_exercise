@@ -241,6 +241,9 @@ switch($tt){
     case "menu":
         $DB=$Menu;
     break;
+    default:
+        $DB=$Title;
+    break;
 }
 
 // $total=$Total->find(1);
