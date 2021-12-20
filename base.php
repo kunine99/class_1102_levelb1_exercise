@@ -7,7 +7,7 @@ class DB{
     protected $user="root";
     protected $pw='';
     protected $pdo;
-    protected $table;
+    public $table;
     //ptotected 不能被改，所以要改成public公開才能，但要小心能改=會不小心改錯
     public $title;
     public $button;
@@ -184,6 +184,12 @@ class DB{
     }
 
 
+}
+
+function dd($array){
+   echo "<pre>";
+   print_r($array);
+   echo "</pre>"; 
 }
 
 
