@@ -1,7 +1,7 @@
 <h3>更新標題區圖片</h3>
 <hr>
 <!-- multipart/form-data 一定要記得加 -->
-<!-- <form action="api/upload_title.php?id=<?=$_GET['id'];?>" method="post" enctype="multipart/form-data"> -->
+<!-- <form action="api/upload_title.php?id=  < ?=$_GET['id'];?>" method="post" enctype="multipart/form-data"> -->
 <form action="api/upload_title.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
