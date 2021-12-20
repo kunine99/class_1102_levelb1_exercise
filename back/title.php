@@ -1,6 +1,6 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli"><?= $DB->title; ?></p>
-    <form method="post" action="api/edit_title.php">
+    <form method="post" action="api/edit.php?do=<?= $DB->table; ?>">
         <table width="100%">
             <tbody>
                 <tr class="yel">
@@ -12,8 +12,8 @@
                 </tr>
 
                 <?php
-                $rowsss = $DB->all();
-                foreach ($rowsss as $row) {
+                $rows = $DB->all();
+                foreach ($rows as $row) {
                     // 在迴圈開始前設一個變數名checked，如果sh是1的話，就把放checked，如果沒有就空字串
                     $checked = ($row['sh'] == 1) ? 'checked' : '';
                 ?>
@@ -49,10 +49,12 @@
             <tbody>
                 <tr>
                     <td width="200px">
-                        <input type="button" 
+                        <!-- <input type="button" 
                         onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/
                         title.php&#39;)" 
-                        value="<?= $DB->button; ?>">
+                        value="< ?= $DB->button; ?>"> -->
+                        <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/<?= $DB->table; ?>.php?table=<?= $DB->table; ?>&#39;)" value="<?= $DB->button; ?>">
+
                     </td>
                     <td class="cent">
                         <input type="submit" value="修改確定">

@@ -160,6 +160,7 @@ class DB{
             $sql="INSERT INTO $this->table (`".implode("`,`",array_keys($array))."`) 
                                      VALUES('".implode("','",$array)."')";
         }
+        echo $sql;
 
         return $this->pdo->exec($sql);
     }
