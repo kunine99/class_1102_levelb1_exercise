@@ -14,7 +14,8 @@
 
                 </tr>
                 <?php
-                $rows=$DB->all();
+                // $rows=$DB->all(); 全部撈出來 ，但我們只要主選單而已，次選單是要點下去才show出來
+                $rows=$DB->all(['parent'=>0]);
                 foreach($rows as $row){
                     $checked=($row['sh']==1)?'checked':'';
                 ?>
