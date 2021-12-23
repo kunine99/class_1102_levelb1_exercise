@@ -4,10 +4,7 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="45%"><?=$DB->header;?></td>
-                    <td width="23%">替代文字</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
+               
                     <td width="30%"><?=$DB->header;?></td>
                     <td width="30%"><?=$DB->append;?></td>
                     <td width="10%">次選單數</td>

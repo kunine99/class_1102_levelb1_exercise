@@ -7,9 +7,8 @@
             <tbody>
                 <tr class="yel">
                     <td width="40%"><?=$DB->header;?></td>
-                    <td width="40%"><?=$DB->append;?><</td>
+                    <td width="40%"><?=$DB->append;?></td>
                     <td width="10%">刪除</td>
-                    <td></td>
                 </tr>
                 <?php
                 $rows=$DB->all();
