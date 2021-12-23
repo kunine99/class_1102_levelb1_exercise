@@ -29,6 +29,7 @@ class DB{
                 $this->title="網站標題管理";
                 $this->button="新增網站標題圖片";
                 $this->header="網站標題";
+                $this->append="替代文字";
             break;
             case "ad";
             $this->title="動態文字廣告管理";
@@ -160,7 +161,7 @@ class DB{
             $sql="INSERT INTO $this->table (`".implode("`,`",array_keys($array))."`) 
                                      VALUES('".implode("','",$array)."')";
         }
-        echo $sql;
+        // echo $sql;
 
         return $this->pdo->exec($sql);
     }

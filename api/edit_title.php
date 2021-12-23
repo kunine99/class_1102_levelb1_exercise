@@ -13,7 +13,9 @@ foreach($_POST['id'] as $key => $id){
 
     }else{
         //更新
-        $data['id']=$id;// Save陣列有個特色，沒有id就新增
+        // $data['id']=$id;// Save陣列有個特色，沒有id就新增
+        // 既然我要更新我就用id去把資料撈出來，用一微陣列這個陣列會有這筆資料的相應內容
+        
         $data['text']=$_POST['text'][$key];
         $data['sh']=($_POST['sh']==$id)?1:0;
         $Title->save($data);
