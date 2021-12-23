@@ -27,7 +27,10 @@
                     <td>
                         <input type="text" name="href[]" value="<?=$row['href'];?>">
                     </td>
-                    <td></td>
+                    <td>
+                        <?=$DB->math('count','*',['parent'=>$row['id']]);?>
+
+                    </td>
                     <td>
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=$checked;?>>
                     </td>
