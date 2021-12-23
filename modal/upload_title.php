@@ -1,11 +1,16 @@
-<h3>更新標題區圖片</h3>
+
+<?php
+include_once "../base.php";
+?>
+
+<h3>更新<?=$DB->upload;?></h3>
 <hr>
 <!-- multipart/form-data 一定要記得加 -->
 <!-- <form action="api/upload_title.php?id=  < ?=$_GET['id'];?>" method="post" enctype="multipart/form-data"> -->
-<form action="api/upload_title.php" method="post" enctype="multipart/form-data">
+<form action="api/upload.php?do=<?=$DB->table;?>" method="post" enctype="multipart/form-data">
     <table>
         <tr>
-            <td>標題區圖片：</td>
+            <td><?=$DB->upload;?>：</td>
             <td><input type="file" name="img" ></td>
         </tr>
 

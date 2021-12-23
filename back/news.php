@@ -7,7 +7,7 @@
                     <td width="80%"><?=$DB->header;?></td>
                     <td width="10%">顯示</td>
                     <td width="10%">刪除</td>
-                    <td></td>
+                  
                 </tr>
                 <?php
                 $rows=$DB->all();
@@ -40,8 +40,7 @@
                 <tr>
                     <td width="200px">
                         <input type="button"
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;
-                            modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
+                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/<?=$DB->table;?>.php?table=<?=$DB->table;?>&#39;)" 
                               value="<?=$DB->button;?>">
                     </td>
                     <td class="cent">

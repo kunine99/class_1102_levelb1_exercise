@@ -3,11 +3,12 @@ include_once "../base.php";
 
 if(!empty($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],"../img/".$_FILES['img']['name']);
+    $data=$DB->find($_POST['id']);
     $data['img']=$_FILES['img']['name'];
-    $data['id']=$_POST['id'];
-    $Title->save($data);
+   
+    $DB->save($data);
 }
 
-to("../back.php?do=".$Title->table);
+to("../back.php?do=".$DB->table);
 
 ?>

@@ -15,13 +15,13 @@
                 ?>
                 <tr>
 
-                    <td width="23%">
-                        <input type="text" name="text[]" value="<?=$row['text'];?>">
+                    <td>
+                        <input type="text" name="text[]" value="<?=$row['text'];?>" style="width:95%">
                     </td>
-                    <td width="7%">
+                    <td>
                         <input type="checkbox" name="sh[]" value="<?=$row['id'];?>" <?=$checked;?>>
                     </td>
-                    <td width="7%">
+                    <td>
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
 
                     </td>

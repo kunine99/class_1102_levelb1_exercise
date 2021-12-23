@@ -13,6 +13,8 @@ class DB{
     public $button;
     public $header; //校園映像圖片
     public $append;
+    public $upload;
+
 
     public function __construct($table){
         $this->table=$table;

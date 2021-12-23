@@ -5,7 +5,7 @@
             <tbody>
                 <tr class="yel">
                     <td width="45%"><?= $DB->header; ?></td>
-                    <td width="23%"><?=$DB->append;?></td>
+                    <td width="23%"><?= $DB->append; ?></td>
                     <td width="7%">顯示</td>
                     <td width="7%">刪除</td>
                     <td></td>
@@ -35,7 +35,7 @@
                             <!-- id因為會加多筆資料所以要用陣列的方式送出多筆資料 -->
                             <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                             <!-- 只要是更新就一定要知道對象是誰 -->
-                            <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/upload_title.php?id=<?= $row['id']; ?>&#39;)" value="更新圖片">
+                            <input type="button" onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/upload.php?do=<?= $DB->table; ?>&id=<?= $row['id']; ?>&#39;)" value="更新圖片">
                             <!-- 按下後去modal_upload -->
                         </td>
                     </tr>
