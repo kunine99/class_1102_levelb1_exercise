@@ -23,16 +23,15 @@ include_once "base.php";
 <body>
     <div id="cover" style="display:none; ">
         <div id="coverr">
-            <a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" 
-            onclick="cl(&#39;#cover&#39;)">X</a>
+            <a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl(&#39;#cover&#39;)">X</a>
             <div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
         </div>
     </div>
 
     <div id="main">
 
-    <?php include "front/header.php";?>
-    
+        <?php include "front/header.php"; ?>
+
         <div id="ms">
             <div id="lf" style="float:left;">
                 <div id="menuput" class="dbor">
@@ -76,25 +75,45 @@ include_once "base.php";
                 <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo(&#39;back.php&#39;)">管理登入</button>
                 <div style="width:89%; height:480px;" class="dbor">
                     <span class="t botli">校園映象區</span>
+                    <div class="t" onclick="pp(1)"><img src="icon/up.jpg"></div>
+                        <?php 
+                            $imgs=$Image->all(['sh'=>1]);
+                            foreach($imgs as $key => $img){
+                        ?>
+                        <div class="im cent" id="ssaa<?=$key;?>">
+                            <img src="img/<?=$img['img'];?>" style="width:150px;height:103px;border:3px solid orange;margin:1px">
+                        </div>
+                        <?php 
+                            }
+                        ?>
+                        <div class="t" class="t" onclick="pp(2)"><img src="icon/dn.jpg"></div>
                     <script>
-                        var nowpage = 0,
-                            num = 0;
 
+
+                        var nowpage = 0,
+                            num = <?=$Image->math("count","*",['sh'=>1]);?>;
+
+                        // pp s t 都是亂取的 沒什麼特殊含義
                         function pp(x) {
                             var s, t;
+                            // 用switch做其實比較好
                             if (x == 1 && nowpage - 1 >= 0) {
                                 nowpage--;
                             }
-                            if (x == 2 && (nowpage + 1) * 3 <= num * 1 + 3) {
+                            // 當某個條件成立的時候我就把我的頁數+1表示你可以往下，x功能就是在控制上下
+                            if (x == 2 && (nowpage + 3)< num ) {
                                 nowpage++;
                             }
-                            $(".im").hide()
+                            $(".im").hide() //把所有class是im的都隱藏起來，隱藏起來後用for這個東西
+                            //s這個東西從0開始算，s小於2，s每次+1，這樣0 1 2 迴圈共跑3次..?
+                            //我只會用.im隱藏 但id會顯示
                             for (s = 0; s <= 2; s++) {
+
                                 t = s * 1 + nowpage * 1;
                                 $("#ssaa" + t).show()
                             }
                         }
-                        pp(1)
+                        pp(1) //瀏覽器從serive仔入的當下我先pp(1)，先pp1 才會有三張圖片出來
                     </script>
                 </div>
             </div>
