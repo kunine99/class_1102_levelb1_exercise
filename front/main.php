@@ -1,18 +1,22 @@
 <div class="di"
     style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+<!-- 這張ad資料表裡 sh1 的才是我要顯示出來的 -->
     <marquee scrolldelay="120" direction="left" style="position:absolute; width:100%; height:40px;">
-    </marquee>
+    <?php  ?>
+</marquee>
     <div style="height:32px; display:block;"></div>
     <!--正中央-->
     <script>
     var lin = new Array();
+    lin[0]='02B02.gif'
     var now = 0;
     if (lin.length > 1) {
         setInterval("ww()", 3000);
         now = 1;
     }
-
+    
     function ww() {
+        // 僅字號代表id ..代表      .html 代表在選擇棄宣告的東西裡面放什麼東西的內榮
         $("#mwww").html("<embed loop=true src='" + lin[now] + "' style='width:99%; height:100%;'></embed>")
         //$("#mwww").attr("src",lin[now])
         now++;
