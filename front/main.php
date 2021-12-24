@@ -1,13 +1,31 @@
 <div class="di"
-    style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
 <!-- 這張ad資料表裡 sh1 的才是我要顯示出來的 -->
 <?php include "marquee.php";?>
-    <div style="height:32px; display:block;"></div>
-    <!--正中央-->
-    <script>
+<div style="height:32px; display:block;"></div>
+<!--正中央-->
+<div style="width:100%; padding:2px; height:290px;">
+    <div id="mwww" loop="true" style="width:100%; height:100%;">
+        <div style="width:99%; height:100%; position:relative;" class="cent">沒有資料</div>
+    </div>
+</div>
+
+<script>
     var lin = new Array();
-    lin[0]='02B02.gif'
-    var now = 0;
+
+    <?php
+        //撈出所有要顯示的動畫圖片並放入JS陣列中
+        $mvs=$Mvim->all(['sh'=>1]);
+        foreach($mvs as $mv){
+        ?>
+            lin.push('<?="img/{$mv['img']}";?>')
+        <?php    
+        }
+
+    ?>
+var now = 0;
+ww()   //先執行一次
+
     if (lin.length > 1) {
         setInterval("ww()", 3000);
         now = 1;
@@ -22,11 +40,6 @@
             now = 0;
     }
     </script>
-    <div style="width:100%; padding:2px; height:290px;">
-        <div id="mwww" loop="true" style="width:100%; height:100%;">
-            <div style="width:99%; height:100%; position:relative;" class="cent">沒有資料</div>
-        </div>
-    </div>
     <div
         style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px 5px 10px; border:#0C3 dashed 3px; position:relative;">
         <span class="t botli">最新消息區
