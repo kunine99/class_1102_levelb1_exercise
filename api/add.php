@@ -44,7 +44,7 @@ break;
 
 
 $DB->save($data);
-to("../back.php?do=".$DB->table)
+to("../back.php?do=".$DB->table);
 
 // dd($_POST);
 
