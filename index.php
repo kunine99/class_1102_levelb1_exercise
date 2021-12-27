@@ -80,7 +80,8 @@ include_once "base.php";
             
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
-                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo(&#39;back.php&#39;)">管理登入</button>
+                <!-- 有登入就返回管理，沒有就回 -->
+                <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo(&#39;?do=login&#39;)">管理登入</button>
                 <!-- 上面主選單 -->
                 <div style="width:89%; height:480px;" class="dbor">   
                 
