@@ -1,10 +1,12 @@
 // JavaScript Document
+// ready瀏覽器歐執行完後開始去執行程式，不想家的話就把ready放在body的前面還後面忘了
 $(document).ready(function(e) {
     $(".mainmu").mouseover(
 		function()
 		{
-			$(this).children(".mw").stop().show()
-		}
+			//this".mainmu"
+			//children只能抓到第一層不能抓第二層    a標籤不能包a標籤
+			$(this).children(".mw").show()		}
 	)
 	$(".mainmu").mouseout(
 		function ()

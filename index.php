@@ -37,6 +37,29 @@ include_once "base.php";
                 <div id="menuput" class="dbor">
                     <!--主選單放此-->
                     <span class="t botli">主選單區</span>
+                    <!-- 既然我要在這邊放東西，我就要撈資料 -->
+                    <?php
+                        $mains=$Menu->all(['parent'=>0,'sh'=>1]);
+                        foreach($mains as $main){
+                            echo "<div class='mainmu'>";
+                            echo "<a href='{$main['href']}'>";
+                            echo $main['name'];
+                            echo "</a>";
+                            if($Menu->math('count','*',['parent'=>$main['id']])>0){
+                                $subs=$Menu->all(['parent'=>$main['id']]);
+                                echo "<div class='mw'>";
+                                foreach ($subs as $sub) {
+                                    echo "<div class='mainmu2'>";
+                                    echo "<a href='{$sub['href']}'>{$sub['name']}</a>";
+                                    echo "</div>";
+                                }
+                                echo "</div>";
+                            }
+                            echo "</div>";
+                        }
+
+
+                    ?>
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
                     <span class="t">進站總人數 :<?= $Total->find(1)['total']; ?></span>
@@ -58,7 +81,9 @@ include_once "base.php";
             <div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
                 <!--右邊-->
                 <button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo(&#39;back.php&#39;)">管理登入</button>
-                <div style="width:89%; height:480px;" class="dbor">
+                <!-- 上面主選單 -->
+                <div style="width:89%; height:480px;" class="dbor">   
+                
                     <span class="t botli">校園映象區</span>
                     <div class="t" onclick="pp(1)"><img src="icon/up.jpg"></div>
                         <?php 
